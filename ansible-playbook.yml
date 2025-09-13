@@ -1,0 +1,16 @@
+---
+- name: Create /opt/devops directory on all managed nodes
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure /opt/devops directory exists
+      file:
+        path: /opt/devops
+        state: directory
+    
+    - name: create info.txt with content
+      copy:
+        content: "Hello from Ansible!"
+        dest: /opt/devops/info.txt
+
+        
