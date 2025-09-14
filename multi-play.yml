@@ -1,0 +1,20 @@
+---
+- name: install git on n2
+  hosts: n2
+  become: yes
+  tasks:
+    - name: git installation
+      yum:
+        name: git
+        state: present
+    
+    - name: install htppd on n2
+      yum:
+        name: httpd
+        state: present
+    
+    - name: start service httpd on n2
+      service:
+        name: httpd
+        state: started
+        enabled: yes
