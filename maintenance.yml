@@ -21,5 +21,5 @@
 
     - name: copy the maintenance.html to /var/www/html/index.html
       copy:
-        src: C:\Users\akand\ansible-work\maintenance.html
+        src: maintenance.html
         dest: /var/www/html/index.html
