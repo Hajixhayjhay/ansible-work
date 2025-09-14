@@ -1,27 +1,25 @@
 ---
-- name: install git on n3
+- name: Setup webserver and deploy app on n3
   hosts: n3
   become: yes
   tasks:
-    - name: git installation
+    - name: Install git
       yum:
         name: git
         state: present
-    
-    - name: install htppd on n3
+
+    - name: Install httpd
       yum:
         name: httpd
         state: present
     
-    - name: start service httpd on n3
+    - name: Start and enable httpd service
       service:
         name: httpd
         state: started
         enabled: yes
--
-    - name: clone a repo
+
+    - name: Clone ecomm-3 repo into /var/www/html
       git:
-        repo: https://github.com/CeeyIT-Solutions/ecomm-3.git
+        repo: "https://github.com/CeeyIT-Solutions/ecomm-3.git"
         dest: /var/www/html
-    
-...
