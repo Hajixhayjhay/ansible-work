@@ -1,0 +1,10 @@
+---
+   - name: copy the static.html to /var/www/html/static.html
+     copy:
+        src: static.html
+        dest: /var/www/html/static.html
+
+   - name: copy the dynamic.html to /var/www/html/dynamic.html
+     template:
+       src: dynamic.j2
+       dest: /var/www/html/dynamic.html

@@ -2,6 +2,9 @@
 - name: Setup webserver and deploy app on g2
   hosts: g2
   become: yes
+  vars: 
+    myusername: Hajix
+    mypassword: Hajix@123
   tasks:
     - name: Install git
       yum:
@@ -19,7 +22,7 @@
         state: started
         enabled: yes
 
-    - name: copy the static.html to /var/www/html/dynamic.html
+    - name: copy the dynamic.html to /var/www/html/dynamic.html
       template:
         src: dynamic.j2
         dest: /var/www/html/dynamic.html
