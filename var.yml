@@ -2,6 +2,8 @@
 - name: Setup webserver and deploy app on g2
   hosts: g2
   become: yes
+  vars:
+    - var_file: variable.yml
   tasks:
     - name: Install git
       yum:
