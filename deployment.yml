@@ -22,9 +22,9 @@
         state: started
         enabled: yes
 
-    - name: copy the dynamic.html to /var/www/html/dynamic.html
+    - name: copy the deployment.html to /var/www/html/deployment.html
       template:
-        src: dynamic.j2
-        dest: /var/www/html/dynamic.html
+        src: deployment.j2
+        dest: /var/www/html/deployment.html
 
 ...
