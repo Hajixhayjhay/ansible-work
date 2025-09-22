@@ -1,5 +1,10 @@
 ---
-   - name: copy the deployment.html to /var/www/html/deployment.html
-     template:
+  - name: copy the static.html to /var/www/html/static.html
+    copy:
+        src: static.html
+        dest: /var/www/html/static.html
+
+  - name: copy the deployment.html to /var/www/html/deployment.html
+    template:
        src: deployment.j2
        dest: /var/www/html/deployment.html
